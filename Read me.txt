@@ -1,0 +1,9 @@
+Steps---------
+1. Extract folder
+2. Open cmd
+3. Go inside the directory where "package.json" is placed
+	e.g. => cd app1
+4. Install dependencies using below command 
+	npm install
+5. Run application
+	ng serve

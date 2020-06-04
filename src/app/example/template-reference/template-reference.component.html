@@ -1,0 +1,80 @@
+<!-- <h2>---------------------------------- Template reference vriable ---------------------------------- </h2>
+
+<p #mypara>para 1</p>
+
+Para value: {{mypara.innerText}} | {{mypara.textContent}}
+
+<hr>
+
+<label>Name: </label>
+<input type="text" class="class1 class2" #txtName [disabled]="mychk.checked"  >
+<br>
+{{txtName.type}}  | {{txtName.value}} | {{txtName.className}}
+<br>
+<input #mychk type="checkbox" (change)="0">
+
+<button (click)="DoSomething(txtName)">Save</button>
+
+<hr>
+
+<p>
+    <textarea #refVar
+              (keyup)="0"
+              (select)="0"
+              cols="25"
+              rows="3">Change or highlight some of this text</textarea>
+  </p>
+  <div>textLength: {{refVar.textLength}}</div>
+  <div>selectionStart: {{refVar.selectionStart}}</div>
+  <div>selectionEnd: {{refVar.selectionEnd}}</div>
+  <p>
+    <button (click)="refVar.select()">
+      Select All
+    </button>
+    <button (click)="refVar.value = ''"
+            [disabled]="refVar.value === ''">
+      Clear
+    </button>
+  </p>
+
+  <h2>---------------------------------- ViewChild ---------------------------------- </h2>
+  <input type="text" #myInput2>
+
+  <h2>---------------------------------- ngModel ---------------------------------- </h2>
+    <input type="text" [(ngModel)]="myInput3" #input3="ngModel" required>
+    <span *ngIf="!input3.valid">Name is required</span>
+    <br>
+    valid: {{input3.valid}} -> invalid: {{input3.invalid}}<br>
+    dirty: {{input3.dirty}} -> pristine: {{input3.pristine}}<br>
+    touched: {{input3.touched}} -> untouched: {{input3.untouched}}<br>
+
+    <button [disabled]="!input3.valid">Save</button> -->
+
+<h2>---------------------------- Form --------------------------------</h2>
+<form #myForm="ngForm">
+  <input type="text" name="inp1" ngModel required>
+  <input type="text" name="inp2" ngModel required>
+  <input type="text" name="inp3" ngModel>
+
+  <button [disabled]="!myForm.form.valid" (click)="mySave(myForm)">Save</button>
+</form>
+<!-- 
+<form #frmSession2="ngForm">
+  <div>
+    <label>Name</label>
+    <input type="text" name="sessionName2" required ngModel>     
+  </div>
+
+  <div>
+    <label>Description</label>
+    <input type="text" name="sessionDesc2" required ngModel>
+  </div>
+
+  <div>
+    <label>IsActive</label>
+    <input type="checkbox" name="sessionIsActive2" ngModel>
+  </div>
+
+  <button [disabled] = "!frmSession2.form.valid" (click)="save2(frmSession2)">Submit2</button>
+  <button type="button" (click)="frmSession2.reset()">Reset</button>
+</form> -->

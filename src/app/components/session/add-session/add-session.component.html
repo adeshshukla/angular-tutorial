@@ -1,0 +1,24 @@
+    <h1>Session Form</h1>
+    <form>
+      <div>
+        <label>Name</label>
+        <input type="text" name="sessionName" #txtName="ngModel" [(ngModel)]="newSession.Name" required>
+        <!-- Name: {{txtName.value}}, IsValid: {{txtName.valid}} -->
+        <!-- <span *ngIf="!txtName.valid && !txtName.pristine">Name is required</span> -->
+        {{txtName.untouched}} -- {{txtName.pristine}} -- {{txtName.valid}}
+        <span style="color: red;" [hidden]="txtName.untouched && (txtName.pristine || txtName.valid)">Name is required</span>
+      </div>
+
+      <div>
+        <label>Description</label>
+        <input type="text" name="sessionDesc" [(ngModel)]="newSession.Description">
+      </div>
+
+      <div>
+        <label>IsActive</label>
+        <input type="checkbox" name="sessionIsActive" [(ngModel)]="newSession.IsActive">
+      </div>
+
+      <button (click)="save()">Submit</button>
+
+    </form>
