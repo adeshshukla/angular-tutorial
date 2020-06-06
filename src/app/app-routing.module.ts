@@ -15,6 +15,7 @@ import { TemplateReferenceComponent } from './example/template-reference/templat
 import { SecureHomeComponent } from './components/secure-home/secure-home.component';
 import { PublicMasterComponent } from './public-master/public-master.component';
 import { DashboardComponent } from './components/secure-home/dashboard/dashboard.component';
+import { PipedemoComponent } from './components/pipedemo/pipedemo.component';
 
 const routes: Routes = [
 
@@ -38,6 +39,7 @@ const routes: Routes = [
       { path: 'third', component: ThirdComponent },
       { path: 'home', component: HomeComponent, },
       { path: 'templateRef', component: TemplateReferenceComponent },
+      { path: 'pipeDemo', component: PipedemoComponent },
       { path: '', redirectTo: 'home', pathMatch: 'full' },
 
     ]

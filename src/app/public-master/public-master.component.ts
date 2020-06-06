@@ -6,14 +6,25 @@ import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
   template: `
 <h2>Header</h2>
 <!-- <a href="/example">Example anchor</a> -->
+<ul *ngFor="let menu of muneus">
+  <li>
+  <a [routerLink]="menu.url">{{menu.text}}</a>&nbsp;
+  </li>
+</ul>
+
+
 <nav>
+   
+<a *ngFor="let menu of muneus" [routerLink]="menu.url">{{menu.text}}</a>&nbsp;
+    
     <a routerLink="/home">Home Link</a>&nbsp;
     <a routerLink="/example">Example Link</a>&nbsp;
     <a routerLink="/paramEx/1/ade">Link with Param</a>&nbsp;
     <a routerLink="/queryEx" [queryParams]="{id:300,name:'Jitu'}">Link with query string</a>&nbsp;
     
     <a routerLink="/templateRef">Template Ref/ViewChild/ngModel Example</a>&nbsp;
-    
+
+    <a routerLink="/pipeDemo">Pipe Demo</a>&nbsp;
     <!-- <a routerLink="studeDetail/{{stud.Id}}">Edit</a>&nbsp; -->
 </nav>
 
@@ -45,7 +56,11 @@ import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
 })
 export class PublicMasterComponent implements OnInit {
 
-  constructor(private router: Router, private route:ActivatedRoute) { }
+  muneus = [{ url: '\test1', text: 'Test1' },
+    { url: '\test2', text: 'Test2' },
+  ];
+  
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
   }

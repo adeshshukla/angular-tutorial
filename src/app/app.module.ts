@@ -26,6 +26,8 @@ import { SecureHomeComponent } from './components/secure-home/secure-home.compon
 import { PublicMasterComponent } from './public-master/public-master.component';
 import { SessiondetailComponent } from './components/sessionlist/sessiondetail.component';
 import { DashboardComponent } from './components/secure-home/dashboard/dashboard.component';
+import { PipedemoComponent } from './components/pipedemo/pipedemo.component';
+import { GenderPipe } from './gender.pipe';
 
 
 @NgModule({
@@ -33,7 +35,8 @@ import { DashboardComponent } from './components/secure-home/dashboard/dashboard
     AppComponent,HomeComponent, ExampleComponent, ParamComponent, ThirdComponent
     , QueryComponent, PageNotFOundComponent, StudentlistComponent, StudentDetailComponent
     , SessionlistComponent, AddSessionComponent, TemplateReferenceComponent, SecureHomeComponent
-    , PublicMasterComponent, SessiondetailComponent, DashboardComponent
+    , PublicMasterComponent, SessiondetailComponent, DashboardComponent, PipedemoComponent
+    , GenderPipe
   ],
   imports: [
     BrowserModule, FormsModule
