@@ -10,6 +10,9 @@ import { Component, OnInit } from '@angular/core';
       <a routerLink="dashboard">Dashboard</a>&nbsp;
       <a routerLink="studList">Student List</a>&nbsp;
       <a routerLink="sessionList">Session List</a>&nbsp;
+      <a routerLink="addSession">Add Session Template</a>&nbsp;
+      <a routerLink="addSessionReactive">Add Session Reactive</a>&nbsp;
+      
     </nav>  
 
     <router-outlet></router-outlet>

@@ -16,6 +16,8 @@ import { SecureHomeComponent } from './components/secure-home/secure-home.compon
 import { PublicMasterComponent } from './public-master/public-master.component';
 import { DashboardComponent } from './components/secure-home/dashboard/dashboard.component';
 import { PipedemoComponent } from './components/pipedemo/pipedemo.component';
+import { AddSession2Component } from './components/session/add-session2/add-session2.component';
+import { AddSessionReactiveComponent } from './components/session/add-session-reactive/add-session-reactive.component';
 
 const routes: Routes = [
 
@@ -26,6 +28,8 @@ const routes: Routes = [
       { path: 'studList', component: StudentlistComponent },
       { path: 'studentDetail/:rollNo', component: StudentDetailComponent },
       { path: 'sessionList', component: SessionlistComponent },
+      { path: 'addSession', component: AddSession2Component },
+      { path: 'addSessionReactive', component: AddSessionReactiveComponent },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
     ]
   },

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 // import {Router, RouterModule} from '@angular/router';
 // import {MyRouteModule} from './myRouteModule'
 import { AppRoutingModule } from './app-routing.module';
@@ -28,6 +28,8 @@ import { SessiondetailComponent } from './components/sessionlist/sessiondetail.c
 import { DashboardComponent } from './components/secure-home/dashboard/dashboard.component';
 import { PipedemoComponent } from './components/pipedemo/pipedemo.component';
 import { GenderPipe } from './gender.pipe';
+import { AddSession2Component } from './components/session/add-session2/add-session2.component';
+import { AddSessionReactiveComponent } from './components/session/add-session-reactive/add-session-reactive.component';
 
 
 @NgModule({
@@ -36,10 +38,10 @@ import { GenderPipe } from './gender.pipe';
     , QueryComponent, PageNotFOundComponent, StudentlistComponent, StudentDetailComponent
     , SessionlistComponent, AddSessionComponent, TemplateReferenceComponent, SecureHomeComponent
     , PublicMasterComponent, SessiondetailComponent, DashboardComponent, PipedemoComponent
-    , GenderPipe
+    , GenderPipe, AddSession2Component, AddSessionReactiveComponent
   ],
   imports: [
-    BrowserModule, FormsModule
+    BrowserModule, FormsModule, ReactiveFormsModule
     // , RouterModule.forRoot([
     //   {path:'example', component:ExampleComponent},
     //   {path:'home', component:HomeComponent},

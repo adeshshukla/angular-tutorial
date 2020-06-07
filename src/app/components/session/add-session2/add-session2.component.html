@@ -1,0 +1,63 @@
+<h1>Session Form</h1>
+<form #frmSession="ngForm">
+  Is form valid : {{frmSession.form.valid}}
+  <div *ngIf="formErrors.length>0">
+    Please correct the below errors:
+    <ul>
+      <li *ngFor="let err of formErrors" class="errClass">
+        {{err}}
+      </li>
+      </ul>
+  </div>
+
+  <div>
+    Form value : {{frmSession.value  | json}}
+  </div>
+
+  
+  <div>
+    <label>Name: 
+      <input type="text" id="sessionName" name="Session Name" #txtName="ngModel" aria-label="Name"
+          [(ngModel)]="newSession.Name" required minlength="5">
+    </label>
+    <span style="color: red;">*</span>
+    <span style="color: red;" [hidden]="txtName.pristine || txtName.valid">Name is required</span>
+  </div>
+
+  <div>
+    <label>Description</label>
+    <input type="text" name="Session Desc" [(ngModel)]="newSession.Description" required>
+  </div>
+
+  <div>
+    <label>IsActive</label>
+    <input type="checkbox" name="sessionIsActive" [(ngModel)]="newSession.IsActive">
+  </div>
+
+  <button (click)="saveValid()">Submit</button>
+  <button type="button" (click)="frmSession.reset()">Reset</button>
+
+</form>
+<!-- 
+
+<h1>Session Form</h1>
+<form #frmSession2="ngForm">
+  <div>
+    <label>Name</label>
+    <input type="text" name="sessionName2" required ngModel>     
+  </div>
+
+  <div>
+    <label>Description</label>
+    <input type="text" name="sessionDesc2" required ngModel>
+  </div>
+
+  <div>
+    <label>IsActive</label>
+    <input type="checkbox" name="sessionIsActive2" ngModel>
+  </div>
+
+  <button [disabled] = "!frmSession2.form.valid" (click)="save2(frmSession2)">Submit2</button>
+  <button type="button" (click)="frmSession2.reset()">Reset</button>
+
+</form> -->
