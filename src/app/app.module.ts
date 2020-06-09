@@ -30,6 +30,8 @@ import { PipedemoComponent } from './components/pipedemo/pipedemo.component';
 import { GenderPipe } from './gender.pipe';
 import { AddSession2Component } from './components/session/add-session2/add-session2.component';
 import { AddSessionReactiveComponent } from './components/session/add-session-reactive/add-session-reactive.component';
+import { DynamicControlsComponent } from './components/session/dynamic-controls/dynamic-controls.component';
+import { DynamicRowsComponent } from './components/session/dynamic-rows/dynamic-rows.component';
 
 
 @NgModule({
@@ -38,7 +40,7 @@ import { AddSessionReactiveComponent } from './components/session/add-session-re
     , QueryComponent, PageNotFOundComponent, StudentlistComponent, StudentDetailComponent
     , SessionlistComponent, AddSessionComponent, TemplateReferenceComponent, SecureHomeComponent
     , PublicMasterComponent, SessiondetailComponent, DashboardComponent, PipedemoComponent
-    , GenderPipe, AddSession2Component, AddSessionReactiveComponent
+    , GenderPipe, AddSession2Component, AddSessionReactiveComponent, DynamicControlsComponent, DynamicRowsComponent
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule

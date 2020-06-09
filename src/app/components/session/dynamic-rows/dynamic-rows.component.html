@@ -1,0 +1,35 @@
+<h1>Dynamic Rows</h1>
+<form [formGroup]="frmSession">
+    <button type="submit" (click)="AddNewRow()">Add new Row</button>&nbsp;
+    <button type="submit" (click)="Save()">Save</button>&nbsp;
+    <hr>
+
+    <div formArrayName="controlRow">
+        <div *ngFor="let ctrl of frmSession.controls.controlRow['controls']; index as i" [formGroupName]="i">
+            <div>
+                <label>Name:
+                    <input type="text" formControlName="name">
+                </label>        
+            </div>
+        
+            <div>
+                <label>Description</label>
+                <input type="text" formControlName="desc">
+            </div>
+        
+            <div>
+                <label>IsActive</label>
+                <input type="checkbox" formControlName="isActive">
+            </div>
+
+            <button (click)=DeleteRow(i)>delete</button>
+            <hr>
+        </div>
+    </div>
+
+
+    
+
+    
+
+</form>

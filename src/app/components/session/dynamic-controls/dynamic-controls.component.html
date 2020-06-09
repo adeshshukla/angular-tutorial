@@ -1,0 +1,48 @@
+<h1>Dynamic Controls</h1>
+<form [formGroup]="frmSession" (ngSubmit)="saveValid(frmSession)">
+
+
+    <div>
+        <label>Name:
+            <input type="text" formControlName="name">
+        </label>
+        <div *ngIf="frmSession.controls.name.touched && frmSession.controls.name.hasError('required')">
+            <span style="color: red;">Name is required</span>
+        </div>
+        <div *ngIf="frmSession.controls.name.touched && frmSession.controls.name.hasError('minlength')">
+            <span style="color: red;">Name must be of at least 5 chars</span>
+        </div>
+    </div>
+
+    <div>
+        <label>Email:
+            <input type="text" formControlName="email" required>
+        </label>
+
+    </div>
+
+    <div>
+        <label>Description</label>
+        <input type="text" formControlName="desc">
+    </div>
+
+    <!-- <div *ngFor="let ctrl of frmSession.controls.contactNos.controls"></div> -->
+    <div formArrayName="contactNos">
+        <div *ngFor="let ctrl of frmSession.controls.contactNos['controls']; index as i">
+            <label>Contact No</label>
+            <input type="text" formControlName="{{i}}">
+        </div>
+    </div>
+    &nbsp; <button type="button" (click)="AddContact()">Add Contact</button>
+
+    <div>
+        <label>IsActive</label>
+        <input type="checkbox" formControlName="isActive">
+    </div>
+
+    <button type="submit">Submit</button>&nbsp;
+    <!-- <button (click)="SetValue()">Load from DB</button>&nbsp;
+    <button (click)="UpdateOneValue()">UpdateOneValue</button>&nbsp;
+    <button type="button" (click)="Reset()">Reset</button>&nbsp; -->
+
+</form>

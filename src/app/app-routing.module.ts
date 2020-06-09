@@ -18,6 +18,8 @@ import { DashboardComponent } from './components/secure-home/dashboard/dashboard
 import { PipedemoComponent } from './components/pipedemo/pipedemo.component';
 import { AddSession2Component } from './components/session/add-session2/add-session2.component';
 import { AddSessionReactiveComponent } from './components/session/add-session-reactive/add-session-reactive.component';
+import { DynamicControlsComponent } from './components/session/dynamic-controls/dynamic-controls.component';
+import { DynamicRowsComponent } from './components/session/dynamic-rows/dynamic-rows.component';
 
 const routes: Routes = [
 
@@ -30,6 +32,8 @@ const routes: Routes = [
       { path: 'sessionList', component: SessionlistComponent },
       { path: 'addSession', component: AddSession2Component },
       { path: 'addSessionReactive', component: AddSessionReactiveComponent },
+      { path: 'dynamicControls', component: DynamicControlsComponent },
+      { path: 'dynamicRows', component: DynamicRowsComponent },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
     ]
   },
