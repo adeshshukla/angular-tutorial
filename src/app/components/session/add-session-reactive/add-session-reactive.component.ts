@@ -9,6 +9,7 @@ import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 })
 export class AddSessionReactiveComponent implements OnInit {
 
+  isValid = true;
   constructor(private formBuilder: FormBuilder) { }
 
   frmSession = this.formBuilder.group({
@@ -19,13 +20,50 @@ export class AddSessionReactiveComponent implements OnInit {
   });
 
   ngOnInit(): void {
+    
     //this.SetValue();
+
+    // this.frmSession.get('name').valueChanges.subscribe(data=> {
+    //   console.log('Form control value changes');      
+    //   console.log(data);
+    //   // http call
+    // });
+
+
+    // this.frmSession.valueChanges.subscribe(data=> {
+    //   console.log('Form value changes');      
+    //   console.log(data);
+    //   // http call
+    // });
+
+    // this.frmSession.get('name').statusChanges.subscribe(data=> {
+    //   console.log('Form control status changes');      
+    //   console.log(data);
+    //   // http call
+    // });
+
+    this.frmSession.statusChanges.subscribe(data => {
+      console.log('Form control status changes');
+      console.log(data);
+      if ((<string>data).toLowerCase() === 'valid')
+        this.isValid = false;
+
+      console.log(this.isValid);
+
+      console.log
+      // http call
+    });
+
+
   }
 
   saveValid(frm: FormGroup) {
 
+
     console.log(frm);
     console.log(frm.controls.name.value);
+    console.log(this.frmSession.get('name').value);
+
     console.log(frm.value)
 
     if (frm.valid) {
