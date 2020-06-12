@@ -32,6 +32,8 @@ import { AddSession2Component } from './components/session/add-session2/add-sess
 import { AddSessionReactiveComponent } from './components/session/add-session-reactive/add-session-reactive.component';
 import { DynamicControlsComponent } from './components/session/dynamic-controls/dynamic-controls.component';
 import { DynamicRowsComponent } from './components/session/dynamic-rows/dynamic-rows.component';
+import { MycolorDirective } from './directives/mycolor.directive';
+import { DirectiveExampleComponent } from './directives/directive-example/directive-example.component';
 
 
 @NgModule({
@@ -40,7 +42,8 @@ import { DynamicRowsComponent } from './components/session/dynamic-rows/dynamic-
     , QueryComponent, PageNotFOundComponent, StudentlistComponent, StudentDetailComponent
     , SessionlistComponent, AddSessionComponent, TemplateReferenceComponent, SecureHomeComponent
     , PublicMasterComponent, SessiondetailComponent, DashboardComponent, PipedemoComponent
-    , GenderPipe, AddSession2Component, AddSessionReactiveComponent, DynamicControlsComponent, DynamicRowsComponent
+    , GenderPipe, AddSession2Component, AddSessionReactiveComponent, DynamicControlsComponent
+    , DynamicRowsComponent, MycolorDirective, DirectiveExampleComponent
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule

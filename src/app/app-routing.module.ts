@@ -20,6 +20,7 @@ import { AddSession2Component } from './components/session/add-session2/add-sess
 import { AddSessionReactiveComponent } from './components/session/add-session-reactive/add-session-reactive.component';
 import { DynamicControlsComponent } from './components/session/dynamic-controls/dynamic-controls.component';
 import { DynamicRowsComponent } from './components/session/dynamic-rows/dynamic-rows.component';
+import { DirectiveExampleComponent } from './directives/directive-example/directive-example.component';
 
 const routes: Routes = [
 
@@ -48,6 +49,7 @@ const routes: Routes = [
       { path: 'home', component: HomeComponent, },
       { path: 'templateRef', component: TemplateReferenceComponent },
       { path: 'pipeDemo', component: PipedemoComponent },
+      { path: 'directiveDemo', component: DirectiveExampleComponent },
       { path: '', redirectTo: 'home', pathMatch: 'full' },
 
     ]

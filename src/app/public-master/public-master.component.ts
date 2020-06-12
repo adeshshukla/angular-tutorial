@@ -6,11 +6,14 @@ import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
   template: `
 <h2>Header</h2>
 <!-- <a href="/example">Example anchor</a> -->
-<ul *ngFor="let menu of muneus">
+
+
+<!-- Dynamic menu example -->
+<!-- <ul *ngFor="let menu of muneus">
   <li>
   <a [routerLink]="menu.url">{{menu.text}}</a>&nbsp;
   </li>
-</ul>
+</ul> -->
 
 
 <nav>
@@ -25,6 +28,7 @@ import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
     <a routerLink="/templateRef">Template Ref/ViewChild/ngModel Example</a>&nbsp;
 
     <a routerLink="/pipeDemo">Pipe Demo</a>&nbsp;
+    <a routerLink="/directiveDemo">Directive Demo</a>&nbsp;
     <!-- <a routerLink="studeDetail/{{stud.Id}}">Edit</a>&nbsp; -->
 </nav>
 
@@ -57,9 +61,9 @@ import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
 export class PublicMasterComponent implements OnInit {
 
   muneus = [{ url: '\test1', text: 'Test1' },
-    { url: '\test2', text: 'Test2' },
+  { url: '\test2', text: 'Test2' },
   ];
-  
+
   constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
