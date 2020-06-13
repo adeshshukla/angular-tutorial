@@ -8,7 +8,8 @@ import { throwError } from 'rxjs';
 })
 export class SessionService {
 
-  private apiUrl:string = 'http://localhost/SwanApi/api/';
+  // private apiUrl:string = 'http://localhost/SwanApi/api/';
+  private apiUrl:string = 'http://localhost:44304/api/';
 
   constructor(private http:HttpClient) { }
 
@@ -42,4 +43,9 @@ export class SessionService {
     //   })
     // );
   }
+
+  addSession(session){
+    return this.http.post(this.apiUrl + 'session/InsertSession', session)
+  }
+
 }

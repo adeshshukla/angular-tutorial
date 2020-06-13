@@ -18,7 +18,6 @@ import { StudentlistComponent } from './components/studentlist/studentlist.compo
 import { DemoService } from './services/demo.service';
 import { StudentDetailComponent } from './components/student-detail/student-detail.component';
 import { SessionlistComponent } from './components/sessionlist/sessionlist.component';
-import { CustomHttpInterceptor } from './customHttpInterceptor';
 import { AddSessionComponent } from './components/session/add-session/add-session.component';
 import { MyHttpInterceptor } from './my-http.interceptor';
 import { TemplateReferenceComponent } from './example/template-reference/template-reference.component';
@@ -58,7 +57,7 @@ import { DirectiveExampleComponent } from './directives/directive-example/direct
   providers: [DemoService
   , {
     provide:HTTP_INTERCEPTORS,
-    useClass: MyHttpInterceptor,//CustomHttpInterceptor,
+    useClass: MyHttpInterceptor,
     multi:true
   }
 ],

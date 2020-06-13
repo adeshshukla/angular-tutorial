@@ -31,7 +31,11 @@ import { SessionService } from 'src/app/services/session.service';
     </table> -->
 
     <div *ngFor="let session of sessionList; let i = index;">
-        <app1-sessiondetail [value]="session" (myevent)="ParentHandler($event)" (complete)="Complete($event)"></app1-sessiondetail>
+        <app1-sessiondetail [value]="session" (myevent)="ParentHandler($event)"></app1-sessiondetail>
+    </div>
+
+    <div>
+      <button (click)="AddNew()">Add New Session</button>
     </div>
 
 
@@ -63,6 +67,23 @@ export class SessionlistComponent implements OnInit {
   getSessionListAsync() {
     this.sessionListAsync = this.sessionService.getSessionFromDB();
   }
+
+  AddNew() {
+    let session = {
+      Id: 3,
+      Name: "",
+      Description: "Old Session",
+      IsActive: true
+    }
+    this.sessionService.addSession(session).subscribe(
+      data => {        
+        alert('Added Successfull');
+        console.log(data);
+        this.getSessionList();
+      }
+      , error => console.error(error));
+  }
+
 
   updateSession() {
     let session = {
