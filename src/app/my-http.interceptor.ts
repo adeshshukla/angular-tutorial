@@ -2,9 +2,17 @@ import { Injectable } from '@angular/core';
 import { HttpInterceptor, HttpHandler, HttpRequest, HttpEvent } from '@angular/common/http';
 import { Observable, throwError, of, timer, } from 'rxjs';
 import { catchError, retry, tap, map, finalize, retryWhen, delayWhen, mergeMap } from 'rxjs/operators';
+import { DemoService } from './services/demo.service';
 
 @Injectable()
 export class MyHttpInterceptor implements HttpInterceptor {
+    /**
+     *
+     */
+    constructor(private demo:DemoService) {
+        
+    }
+
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
         let token = '1234';
@@ -43,6 +51,7 @@ export class MyHttpInterceptor implements HttpInterceptor {
 
                     console.log('Error in interceptor')
                     console.log(err);
+                    console.log(this.demo.getStudentList());
                     // return throwError('Internal server in interceptor')
                     return new Observable<any>(null);
                 }),

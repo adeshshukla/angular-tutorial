@@ -58,7 +58,7 @@ import { DirectiveExampleComponent } from './directives/directive-example/direct
   , {
     provide:HTTP_INTERCEPTORS,
     useClass: MyHttpInterceptor,
-    multi:true
+    multi:true,
   }
 ],
   bootstrap: [AppComponent]
